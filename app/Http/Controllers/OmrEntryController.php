@@ -23,24 +23,25 @@ class OmrEntryController extends Controller
 
         if($student)
         {
-            dd($student->name);
-            return view('confirm-page')->with(['student' => $student]);
+//            dd($student->name);
+            return view('confirm')->with(['student' => $student]);
         }
 
         abort(404);
     }
 
-    public function saveNewOmr(Request $request, Student $student)
+    public function saveNewOmr(Request $request, Students $student)
     {
         $this->validate($request,[
-            'omr_serial_one' => 'required|string|max:7',
-            'omr_serial_two' => 'required|string|max:7',
+            'omrSL1' => 'nullable|string|max:7',
+            'omrSL2' => 'nullable|string|max:7',
         ]);
 
         $student->update([
-            'OMRSRL_paper_1' => $request->omr_serial_one,
-            'OMRSRL_paper_2' => $request->omr_serial_two
+            'OMRSRL_paper_1' => $request->input('omrSL1') ?? null,
+            'OMRSRL_paper_2' => $request->input('omrSL2') ?? null,
         ]);
+        dd('success');
 
         return view('omr-updated')->with(['student' => $student]);
     }
