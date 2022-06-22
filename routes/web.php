@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OmrEntryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/search-student', [OmrEntryController::class, 'searchStudent'])->name('search-student');
+Route::post('/confirm-student', [OmrEntryController::class, 'confirmPage'])->name('confirm-student');
