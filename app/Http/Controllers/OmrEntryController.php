@@ -49,7 +49,7 @@ class OmrEntryController extends Controller
     // this function is showing all the students those have omr entry
     public function listOfStudents()
     {
-        $students = Students::all();
+        $students = Students::whereNotNull('OMRSRL_paper_1')->orWhereNotNull('OMRSRL_paper_2')->get();
         return view('students-checklist')->with(['students' => $students]);
     }
 }
