@@ -41,7 +41,7 @@ class OmrEntryController extends Controller
             'OMRSRL_paper_1' => $request->input('omrSL1') ?? null,
             'OMRSRL_paper_2' => $request->input('omrSL2') ?? null,
         ]);
-        dd('success');
+        // dd('success');
 
         return view('omr-updated')->with(['student' => $student]);
     }

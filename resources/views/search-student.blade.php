@@ -22,8 +22,15 @@
                         @csrf
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Enter Exam Roll</label>
-                            <input type="text" class="form-control" id="examRoll" name="examRoll"  placeholder="Example : 2500010001" maxlength="10">
+                            <input type="text" class="form-control @error('examRoll') is-invalid @enderror" id="examRoll" name="examRoll"  placeholder="Example : 2500010001" maxlength="10">
+
+                            @error('examRoll')
+                                <span class="invalid-feedback" >
+                                    <strong>{{$message}}</strong>
+                                </span>
+                            @enderror
                         </div>
+
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary"> Search Student</button>
                         </div>

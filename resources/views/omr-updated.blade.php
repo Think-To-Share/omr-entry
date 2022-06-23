@@ -68,38 +68,21 @@
                     <td><strong>Exam Center Block</strong></td>
                     <td>{{$student->centerBlock}}</td>
                 </tr>
+                <tr class="table-active">
+                    <td><strong>OMR SERIAL NO 1</strong></td>
+                    <td>{{$student->OMRSRL_paper_1}}</td>
+                </tr>
+                <tr class="table-active">
+                    <td><strong>OMR SERIAL NO 2</strong></td>
+                    <td>{{$student->OMRSRL_paper_1}}</td>
+                </tr>
             </tbody>
         </table>
         <div class="card col-12">
             <div class="card-body">
-                <form action="{{ route('update-student',['student' => $student->id]) }}" method="post">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Enter OMR SL NO 1</label>
-                        <input type="text" class="form-control @error('omrSL1') is-invalid @enderror" id="omrSL1" name="omrSL1"  placeholder="Example : 4529648" maxlength="7" value="{{ old('omrSL1') }}">
-
-                        @error('omrSL1')
-                            <span class="invalid-feedback" >
-                                <strong>{{$message}}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Enter OMR SL NO 2</label>
-                        <input type="text" class="form-control @error('omrSL2') is-invalid @enderror" id="omrSL2" name="omrSL2"  placeholder="Example : 5529648" maxlength="7" value="{{ old('omrSL2') }}">
-
-                        @error('omrSL2')
-                            <span class="invalid-feedback" >
-                                <strong>{{$message}}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-primary"> Update OMR Serial</button>
-                    </div>
-                </form>
+                <div class="mb-3">
+                    <a href="{{route('search-student')}}" class="btn btn-danger"> Edit Again Or Next</a>
+                </div>
             </div>
         </div>
     </div>
