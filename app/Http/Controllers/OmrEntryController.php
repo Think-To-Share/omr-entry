@@ -45,4 +45,11 @@ class OmrEntryController extends Controller
 
         return view('omr-updated')->with(['student' => $student]);
     }
+
+    // this function is showing all the students those have omr entry
+    public function listOfStudents()
+    {
+        $students = Students::all();
+        return view('students-checklist')->with(['students' => $students]);
+    }
 }

@@ -68,13 +68,21 @@
                     <td><strong>Exam Center Block</strong></td>
                     <td>{{$student->centerBlock}}</td>
                 </tr>
-                <tr class="table-active">
-                    <td><strong>OMR SERIAL NO 1</strong></td>
-                    <td>{{$student->OMRSRL_paper_1}}</td>
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        
+                    </td>
                 </tr>
-                <tr class="table-active">
-                    <td><strong>OMR SERIAL NO 2</strong></td>
-                    <td>{{$student->OMRSRL_paper_2}}</td>
+                <tr class="table-active table-warning">
+                    <td><strong>OMR SERIAL NO 1</strong></td>
+                    <td><strong>{{$student->OMRSRL_paper_1}}</strong></td>
+                </tr>
+                <tr class="table-active table-success">
+                    <td ><strong>OMR SERIAL NO 2</strong></td>
+                    <td><strong> {{$student->OMRSRL_paper_2}} </strong></td>
                 </tr>
             </tbody>
         </table>

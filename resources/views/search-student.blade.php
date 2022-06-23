@@ -31,6 +31,7 @@
 
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary"> Search Student</button>
+                            <a href="#" class="btn btn-warning"> Students Checklist </a>
                         </div>
                     </form>
                 </div>
