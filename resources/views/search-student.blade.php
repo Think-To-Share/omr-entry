@@ -12,16 +12,14 @@
 </head>
 <body>
     <div class="container mt-5">
+        <h3 class="mb-3 fw-normal text-center text-primary pt-5">OMR ENTRY APP</h3>
         <div class="row justify-content-center">
-            <div class="card col-12">
-                <div class="card-header">
-                    Please Enter Exam Roll Correctly
-                </div>
+            <div class="card col-6 border-info mb-3">
                 <div class="card-body">
                     <form action="{{route('confirm-student')}}" method="post">
                         @csrf
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Enter Exam Roll</label>
+                            <label for="exampleFormControlInput1" class="form-label">Enter Exam Roll Correctly</label>
                             <input type="text" class="form-control @error('examRoll') is-invalid @enderror" id="examRoll" name="examRoll"  placeholder="Example : 2500010001" maxlength="10">
 
                             @error('examRoll')

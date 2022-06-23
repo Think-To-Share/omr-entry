@@ -9,8 +9,8 @@ class OmrEntryController extends Controller
 {
     public function searchStudent()
     {
-        $students = Students::all();
-        return view('search-student')->with(['students' => $students]);
+        // $students = Students::all();
+        return view('search-student');
     }
 
     public function confirmPage(Request $request)

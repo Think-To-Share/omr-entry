@@ -76,7 +76,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Enter OMR SL NO 1</label>
-                        <input type="text" class="form-control @error('omrSL1') is-invalid @enderror" id="omrSL1" name="omrSL1"  placeholder="Example : 4529648" maxlength="7" value="{{ old('omrSL1') }}">
+                        <input type="text" class="form-control @error('omrSL1') is-invalid @enderror" id="omrSL1" name="omrSL1"  placeholder="Example : 4529648" maxlength="7" value="{{ old('omrSL1', $student->OMRSRL_paper_1) }}">
 
                         @error('omrSL1')
                             <span class="invalid-feedback" >
@@ -84,10 +84,10 @@
                             </span>
                         @enderror
                     </div>
-                    
+
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Enter OMR SL NO 2</label>
-                        <input type="text" class="form-control @error('omrSL2') is-invalid @enderror" id="omrSL2" name="omrSL2"  placeholder="Example : 5529648" maxlength="7" value="{{ old('omrSL2') }}">
+                        <input type="text" class="form-control @error('omrSL2') is-invalid @enderror" id="omrSL2" name="omrSL2"  placeholder="Example : 5529648" maxlength="7" value="{{ old('omrSL2', $student->OMRSRL_paper_2) }}">
 
                         @error('omrSL2')
                             <span class="invalid-feedback" >

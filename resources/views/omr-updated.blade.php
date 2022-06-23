@@ -74,7 +74,7 @@
                 </tr>
                 <tr class="table-active">
                     <td><strong>OMR SERIAL NO 2</strong></td>
-                    <td>{{$student->OMRSRL_paper_1}}</td>
+                    <td>{{$student->OMRSRL_paper_2}}</td>
                 </tr>
             </tbody>
         </table>
