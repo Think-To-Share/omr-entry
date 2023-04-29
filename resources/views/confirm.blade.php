@@ -76,7 +76,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Enter OMR SL NO 1</label>
-                        <input type="text" class="form-control @error('omrSL1') is-invalid @enderror" id="omrSL1" name="omrSL1"  placeholder="Example : 4529648" maxlength="7" value="{{ old('omrSL1', $student->OMRSRL_paper_1) }}">
+                        <input type="text" class="form-control @error('omrSL1') is-invalid @enderror" id="omrSL1" name="omrSL1"  placeholder="Example : 4529648" maxlength="7" value="{{ old('omrSL1', $student->OMRSRL_paper_1) }}" autofocus>
 
                         @error('omrSL1')
                             <span class="invalid-feedback" >

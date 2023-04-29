@@ -20,7 +20,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Enter Exam Roll Correctly</label>
-                            <input type="text" class="form-control @error('examRoll') is-invalid @enderror" id="examRoll" name="examRoll"  placeholder="Example : 2500010001" maxlength="10">
+                            <input type="text" class="form-control @error('examRoll') is-invalid @enderror" id="examRoll" name="examRoll"  placeholder="Example : 2500010001" maxlength="10" autofocus>
 
                             @error('examRoll')
                                 <span class="invalid-feedback" >
@@ -36,8 +36,6 @@
                     </form>
                 </div>
             </div>
-
-
         </div>
     </div>
     </body>
