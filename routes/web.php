@@ -17,8 +17,14 @@ use App\Http\Controllers\OmrEntryController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::middleware('auth')->group(function () {
+    Route::get('/', [OmrEntryController::class, 'searchStudent'])->name('search-student');
+    Route::post('/confirm-student', [OmrEntryController::class, 'confirmPage'])->name('confirm-student');
+    Route::post('/update-student/{student}', [OmrEntryController::class, 'saveNewOmr'])->name('update-student');
+    Route::get('/students-check-list', [OmrEntryController::class, 'listOfStudents'])->name('students-checklist');
+});
 
-Route::get('/', [OmrEntryController::class, 'searchStudent'])->name('search-student');
-Route::post('/confirm-student', [OmrEntryController::class, 'confirmPage'])->name('confirm-student');
-Route::post('/update-student/{student}', [OmrEntryController::class, 'saveNewOmr'])->name('update-student');
-Route::get('/students-check-list', [OmrEntryController::class, 'listOfStudents'])->name('students-checklist');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

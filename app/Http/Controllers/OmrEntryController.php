@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Students;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OmrEntryController extends Controller
 {
@@ -40,6 +41,7 @@ class OmrEntryController extends Controller
         $student->update([
             'OMRSRL_paper_1' => $request->input('omrSL1') ?? null,
             'OMRSRL_paper_2' => $request->input('omrSL2') ?? null,
+            'user_id' => Auth::user()->id,
         ]);
         // dd('success');
 
